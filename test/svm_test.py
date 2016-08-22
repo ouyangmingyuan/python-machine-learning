@@ -11,13 +11,16 @@ from numpy import *
 import sys
 sys.path.append("..")
 from algrithem import svm
+
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
   
 ################## test svm #####################  
 # # step 1: load data  
 print "step 1: load data..."  
 dataSet = []  
 labels = []  
-fileIn = open('/Users/darcy/pywork/python-machine-learning/data/svm_dataSet.txt')  
+fileIn = open(BASE_DIR + '/data/svm_dataSet.txt')
 for line in fileIn.readlines():  
     lineArr = line.strip().split('\t')  
     dataSet.append([float(lineArr[0]), float(lineArr[1])])  

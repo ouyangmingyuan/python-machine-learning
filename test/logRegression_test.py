@@ -14,10 +14,13 @@ import sys
 sys.path.append("..")
 from algrithem import logRegression
 
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def loadData():
     train_x = []
     train_y = []
-    fileIn = open('/Users/darcy/pywork/python-machine-learning/data/logRegression_dataSet.txt')
+    fileIn = open(BASE_DIR + '/data/logRegression_dataSet.txt')
     for line in fileIn.readlines():
         lineArr = line.strip().split()
         train_x.append([1.0, float(lineArr[0]), float(lineArr[1])])

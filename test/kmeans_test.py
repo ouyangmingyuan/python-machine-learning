@@ -13,11 +13,14 @@ import matplotlib.pyplot as plt
 import sys
 sys.path.append("..")
 from algrithem import kmeans
+
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
   
 # # step 1: load data  
 print "step 1: load data..."  
 dataSet = []  
-fileIn = open('/Users/darcy/pywork/python-machine-learning/data/kmeans_dataSet.txt')  
+fileIn = open(BASE_DIR + '/data/kmeans_dataSet.txt')  
 for line in fileIn.readlines():  
     lineArr = line.strip().split('\t')  
     dataSet.append([float(lineArr[0]), float(lineArr[1])])  
